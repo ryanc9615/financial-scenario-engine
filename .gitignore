@@ -1,0 +1,32 @@
+# Python runtime and environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local application configuration and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Editor / OS
+.DS_Store
+.idea/
+.vscode/
+
+# Build and package output
+build/
+dist/
+*.egg-info/
+
+# Local data and logs
+*.sqlite3
+*.db
+*.log

@@ -1,8 +1,8 @@
 # Financial Scenario Engine — Engineering Specification
 
-**Project:** Technical Apprenticeship, Project 2  
-**Status:** Agreed V1 design; implementation not started  
-**Last reviewed:** 2026-10-10  
+**Project:** Technical Apprenticeship, Project 2\
+**Status:** Agreed V1 design; implementation not started\
+**Last reviewed:** 2026-10-10\
 **Priority:** Learn backend engineering through an end-to-end, independently explainable application.
 
 > **Source of truth:** This document is the implementation contract distilled from the initial project scope and engineering-planning conversation. If an implementation choice needs to change, explain the trade-off and record the decision in `docs/DECISIONS.md`; do not silently enlarge scope. The original user-provided brief is preserved in `docs/ORIGINAL_SCOPE.md`.
@@ -60,17 +60,17 @@ A converter/map between domain, API and ORM may be necessary. Avoid making one t
 ### 4.1 Input assumptions and example case
 
 | API/domain field | Example | Type and rule |
-|---|---:|---|
+| --- | --- | --- |
 | `starting_customers` | 100 | integer, >= 0 |
 | `monthly_price` | £200.00 | Decimal, > 0 |
-| `monthly_churn_rate` | 0.02 | Decimal in [0,1] |
+| `monthly_churn_rate` | 0.02 | Decimal in \[0,1\] |
 | `sales_reps` | 2 | integer, >= 0 |
 | `qualified_opportunities_per_rep` | 20 | integer, >= 0 |
-| `win_rate` | 0.10 | Decimal in [0,1] |
+| `win_rate` | 0.10 | Decimal in \[0,1\] |
 | `monthly_marketing_spend` | £3,000.00 | Decimal, >= 0 |
 | `other_fte` | 3 | integer, >= 0 |
 | `monthly_fully_loaded_cost_per_fte` | £4,000.00 | Decimal, >= 0 |
-| `gross_margin` | 0.80 | Decimal in [0,1] |
+| `gross_margin` | 0.80 | Decimal in \[0,1\] |
 | `cash_collection_lag_months` | 0 | integer, 0 or 1 |
 | `starting_cash` | £150,000.00 | Decimal, >= 0 |
 
@@ -126,7 +126,7 @@ V1 is **P&L + simplified operating cash bridge**. It deliberately excludes recei
 ## 5. API contract (ten endpoints)
 
 | Method | Path | Request | Success | Main expected errors |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | POST | `/forecasts` | complete assumptions | `200` 12-month forecast | `422` invalid body |
 | POST | `/companies` | name, currency | `201` created company | `422` invalid values |
 | GET | `/companies/{id}` | path ID | `200` company | `404`, `422` |
@@ -141,6 +141,7 @@ V1 is **P&L + simplified operating cash bridge**. It deliberately excludes recei
 **HTTP design:** GET for read-only retrieval; POST for resource creation and the stateless `/forecasts` calculation with a request body; PATCH for partial updates; DELETE for scenario removal. No separate PUT endpoint. GET requests never mutate saved records.
 
 **Validation and error policy:**
+
 - All IDs positive integers. Malformed IDs → 422, well-formed absent IDs → 404.
 - Company `currency` fixed to GBP in V1; company and scenario names must be nonblank and <= 120 chars.
 - Scenario names unique per company, case-sensitive. Conflicts → 409, including unique violations caused by races.
@@ -165,7 +166,7 @@ Forecast + comparison = derived in Python; NOT stored tables.
 ```
 
 | Table | Columns and PostgreSQL types | Important constraints |
-|---|---|---|
+| --- | --- | --- |
 | `companies` | `id BIGINT IDENTITY`, `name VARCHAR(120)`, `currency CHAR(3)`, `created_at TIMESTAMPTZ` | PK `id`; NOT NULL; trimmed name nonblank; currency = `GBP` |
 | `scenarios` | `id BIGINT IDENTITY`, `company_id BIGINT`, `name VARCHAR(120)`, `created_at TIMESTAMPTZ` | PK `id`; FK company; UNIQUE(`company_id`, `name`); NOT NULL; trimmed name nonblank |
 | `scenario_assumptions` | `scenario_id BIGINT`; `starting_customers INTEGER`; `monthly_price NUMERIC(14,2)`; `monthly_churn_rate NUMERIC(7,6)`; `sales_reps INTEGER`; `qualified_opportunities_per_rep INTEGER`; `win_rate NUMERIC(7,6)`; `monthly_marketing_spend NUMERIC(14,2)`; `other_fte INTEGER`; `monthly_fully_loaded_cost_per_fte NUMERIC(14,2)`; `gross_margin NUMERIC(7,6)`; `cash_collection_lag_months SMALLINT`; `starting_cash NUMERIC(14,2)` | `scenario_id` PK+FK `ON DELETE CASCADE`; all NOT NULL; numeric checks parallel API rules |
@@ -237,7 +238,7 @@ Practice raw SQL in a disposable learning schema in Phase 07. Use Alembic-manage
 ## 10. Error ownership and testing
 
 | Failure | Expected owner | Outcome |
-|---|---|---|
+| --- | --- | --- |
 | Missing field, negative price, churn >100%, invalid collection lag | Pydantic + domain safeguards + DB CHECK | 422 from API |
 | Missing company / scenario | Service | 404 |
 | Duplicate scenario name | UNIQUE constraint + service translation | 409 |

@@ -22,32 +22,35 @@ If sources disagree, surface the conflict, explain it and agree on a minimal res
 
 ## Teaching style
 
-1. Introduce a concept at the point the project needs it.
-2. Explain what problem it solves, what abstraction it creates, what still occurs underneath and what the simpler alternative would be.
-3. Before writing unfamiliar logic, ask me to predict behaviour or describe the expected calculation/SQL/HTTP interaction when useful.
-4. Break build tasks into one meaningful step at a time. Let me attempt changes and reply before proceeding.
-5. Provide focused code examples, hints and reviews. Do not produce an entire phase or multiple untouched files of code unprompted.
-6. When something breaks, coach me to reproduce, isolate, inspect evidence and hypothesise **before** rewriting.
-7. Test calculation correctness against independently derived expected values; do not treat code's own output as its oracle.
-8. Have me inspect HTTP payloads, ORM-generated SQL, database records, transaction behaviour and logs.
-9. Periodically ask me to explain architecture and trade-offs in my own words.
+ 1. Introduce a concept at the point the project needs it.
+ 2. Explain what problem it solves, what abstraction it creates, what still occurs underneath and what the simpler alternative would be.
+ 3. Before writing unfamiliar logic, ask me to predict behaviour or describe the expected calculation/SQL/HTTP interaction when useful.
+ 4. Break build tasks into one meaningful step at a time. Let me attempt changes and reply before proceeding.
+ 5. Provide focused code examples, hints and reviews. Do not produce an entire phase or multiple untouched files of code unprompted.
+ 6. When something breaks, coach me to reproduce, isolate, inspect evidence and hypothesise **before** rewriting.
+ 7. Test calculation correctness against independently derived expected values; do not treat code's own output as its oracle.
+ 8. Have me inspect HTTP payloads, ORM-generated SQL, database records, transaction behaviour and logs.
+ 9. Periodically ask me to explain architecture and trade-offs in my own words.
 10. Tie backend concepts to financial and commercial concepts when relevant, but do not increase the model's financial complexity merely for realism.
 
 ## Each phase workflow
 
 **Start**
+
 - Identify phase number, objective and expected outcome.
 - Read `docs/PROJECT_STATE.md`; inspect files/tests when accessible. If unable to access local files, ask me for those specific contents.
 - Confirm prerequisites and any blockers.
 - Explain first core concept, then propose only the next small action.
 
 **During**
+
 - Implement and test incrementally.
 - Distinguish conceptual explanations from commands to run and observed results.
 - Prefer minimal modules and no premature abstractions.
 - Record important decisions and explain departures from scope.
 
 **Finish**
+
 - Check acceptance criteria against actual observed functionality and test outputs.
 - Ask 3–5 targeted understanding questions.
 - Return explicit COMPLETE or NOT YET COMPLETE with gaps.

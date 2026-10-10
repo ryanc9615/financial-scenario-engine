@@ -19,6 +19,7 @@ Act as my interactive engineering tutor. Follow the project's original scope, `d
 **Phase objective:** Create and understand a clean Python development environment and a reproducible Git workflow before adding domain logic.
 
 **Guide me through these build and learning activities:**
+
 1. Inspect the actual operating system, editor, terminal, Python and Git setup; do not assume their versions.
 2. Create a virtual environment; understand activation, interpreter choice, package isolation and dependency management.
 3. Create the smallest runnable Python package and project structure; introduce `pyproject.toml` only as needed.
@@ -31,6 +32,7 @@ Act as my interactive engineering tutor. Follow the project's original scope, `d
 **Business/financial concepts to reinforce:** Why a reliable development environment and reproducible workflow matter for professional software.
 
 **Acceptance criteria (demonstrate rather than assume):**
+
 - [ ] A Python entry point runs in the project environment.
 - [ ] The user can explain which interpreter and environment are active.
 - [ ] A meaningful source change is committed and working tree status is understood.
@@ -43,7 +45,6 @@ Act as my interactive engineering tutor. Follow the project's original scope, `d
 **Begin with this action:** Help me inspect my current local environment and repository first. Then teach the first setup concept and guide one step at a time.
 
 Before closing, perform a 3–5-question knowledge check, review observed tests, determine COMPLETE or NOT YET COMPLETE, and update the PROJECT_STATE handoff with actual evidence.
-
 
 ---
 
@@ -60,6 +61,7 @@ Act as my interactive engineering tutor. Follow the project's original scope, `d
 **Phase objective:** Model the 12 financial inputs and structured calculation outputs before implementing formulas.
 
 **Guide me through these build and learning activities:**
+
 1. Distinguish business concepts from Python dictionaries, dataclasses and classes.
 2. Define exactly the 12 V1 financial assumptions in the engineering specification.
 3. Choose types for counts, decimal money and rates; introduce `Decimal` and rounding.
@@ -72,6 +74,7 @@ Act as my interactive engineering tutor. Follow the project's original scope, `d
 **Business/financial concepts to reinforce:** Business assumptions, financial precision, model inputs versus outputs and reproducible scenarios.
 
 **Acceptance criteria (demonstrate rather than assume):**
+
 - [ ] Assumptions and result objects can be constructed and inspected.
 - [ ] The 12 agreed inputs and their type/range intent are explicit.
 - [ ] No database or HTTP imports are needed.
@@ -84,7 +87,6 @@ Act as my interactive engineering tutor. Follow the project's original scope, `d
 **Begin with this action:** Have me compare a dictionary versus a dataclass for the same financial assumptions before choosing an implementation.
 
 Before closing, perform a 3–5-question knowledge check, review observed tests, determine COMPLETE or NOT YET COMPLETE, and update the PROJECT_STATE handoff with actual evidence.
-
 
 ---
 
@@ -101,6 +103,7 @@ Act as my interactive engineering tutor. Follow the project's original scope, `d
 **Phase objective:** Implement and test the 12-month customer opening, churn, acquisition and closing calculations.
 
 **Guide me through these build and learning activities:**
+
 1. Translate opening → churned → new → closing customer movements into deterministic functions.
 2. Use opening customers to calculate churn, cap churn to opening customers, and round customer flows with `Decimal` + `ROUND_HALF_UP`.
 3. Compute new customers from sales reps × opportunities per rep × win rate.
@@ -113,6 +116,7 @@ Act as my interactive engineering tutor. Follow the project's original scope, `d
 **Business/financial concepts to reinforce:** Customer acquisition, churn, net customer movement and growth dynamics.
 
 **Acceptance criteria (demonstrate rather than assume):**
+
 - [ ] For the base case, month 1 has 2 churned, 4 acquired and 102 closing customers.
 - [ ] A 12-month customer series is produced without API/database.
 - [ ] Boundary-case tests pass and results are explainable by hand.
@@ -124,7 +128,6 @@ Act as my interactive engineering tutor. Follow the project's original scope, `d
 **Begin with this action:** Ask me to derive and calculate the month-1 customer movement on paper, then translate one rule at a time to Python.
 
 Before closing, perform a 3–5-question knowledge check, review observed tests, determine COMPLETE or NOT YET COMPLETE, and update the PROJECT_STATE handoff with actual evidence.
-
 
 ---
 
@@ -141,6 +144,7 @@ Act as my interactive engineering tutor. Follow the project's original scope, `d
 **Phase objective:** Extend monthly customer movements into deterministic financial revenue and profit calculations.
 
 **Guide me through these build and learning activities:**
+
 1. Use month-end/post-flow customers to calculate monthly recurring revenue.
 2. Explain MRR versus exit ARR (12×MRR), and recognised monthly revenue equals billings for V1.
 3. Calculate COGS, gross profit, operating payroll, marketing and EBITDA.
@@ -153,6 +157,7 @@ Act as my interactive engineering tutor. Follow the project's original scope, `d
 **Business/financial concepts to reinforce:** SaaS subscription economics, gross margin, payroll, EBITDA, operating leverage, ARR run-rate versus annual revenue.
 
 **Acceptance criteria (demonstrate rather than assume):**
+
 - [ ] Month 1 base case: 102 customers, £20,400 revenue, £4,080 COGS, £16,320 gross profit, £20,000 payroll, £3,000 marketing and -£6,680 EBITDA.
 - [ ] Revenue and profit are correctly generated for each of 12 periods.
 - [ ] Tests derive expectations independently from source code.
@@ -164,7 +169,6 @@ Act as my interactive engineering tutor. Follow the project's original scope, `d
 **Begin with this action:** Ask me to calculate month-1 MRR, ARR, gross profit and EBITDA manually before coding.
 
 Before closing, perform a 3–5-question knowledge check, review observed tests, determine COMPLETE or NOT YET COMPLETE, and update the PROJECT_STATE handoff with actual evidence.
-
 
 ---
 
@@ -181,6 +185,7 @@ Act as my interactive engineering tutor. Follow the project's original scope, `d
 **Phase objective:** Complete and test the standalone 12-month Python financial forecasting engine.
 
 **Guide me through these build and learning activities:**
+
 1. Introduce cash receipts with a zero- or one-month collection delay; opening receivables equal zero.
 2. Explain why cash receipts differ from recognised revenue/EBITDA under collection lag.
 3. Compute operating cash movement, opening and closing cash balances monthly.
@@ -194,6 +199,7 @@ Act as my interactive engineering tutor. Follow the project's original scope, `d
 **Business/financial concepts to reinforce:** Cash conversion, working capital timing, earnings vs cash, cash runway warning and limitations of a simplified cash bridge.
 
 **Acceptance criteria (demonstrate rather than assume):**
+
 - [ ] Immediate-collection base case month 1 EBITDA/operating cash -£6,680 and closing cash £143,320.
 - [ ] Lag=1 month 1 receipts zero and EBITDA unchanged.
 - [ ] Twelve periods plus summary are produced; important unit tests pass.
@@ -206,7 +212,6 @@ Act as my interactive engineering tutor. Follow the project's original scope, `d
 **Begin with this action:** First ask me to predict how moving from zero-month to one-month collection changes revenue, EBITDA and closing cash.
 
 Before closing, perform a 3–5-question knowledge check, review observed tests, determine COMPLETE or NOT YET COMPLETE, and update the PROJECT_STATE handoff with actual evidence.
-
 
 ---
 
@@ -223,6 +228,7 @@ Act as my interactive engineering tutor. Follow the project's original scope, `d
 **Phase objective:** Expose the independently tested financial engine as an HTTP JSON service.
 
 **Guide me through these build and learning activities:**
+
 1. Teach request/response anatomy, client-server separation, methods, URLs, headers, body, JSON and status codes.
 2. Install FastAPI and the minimal local app server only when needed.
 3. Create an app and `POST /forecasts` endpoint that calls the domain function.
@@ -235,6 +241,7 @@ Act as my interactive engineering tutor. Follow the project's original scope, `d
 **Business/financial concepts to reinforce:** An existing financial capability becomes a reusable backend service, independent of UI.
 
 **Acceptance criteria (demonstrate rather than assume):**
+
 - [ ] An HTTP POST returns correct 12-month JSON output.
 - [ ] The original Python engine tests still pass.
 - [ ] The user can explain route selection, data flow and HTTP response components.
@@ -246,7 +253,6 @@ Act as my interactive engineering tutor. Follow the project's original scope, `d
 **Begin with this action:** Start with a raw HTTP request example and ask me to identify method, path, headers and body.
 
 Before closing, perform a 3–5-question knowledge check, review observed tests, determine COMPLETE or NOT YET COMPLETE, and update the PROJECT_STATE handoff with actual evidence.
-
 
 ---
 
@@ -263,6 +269,7 @@ Act as my interactive engineering tutor. Follow the project's original scope, `d
 **Phase objective:** Define and test robust request/response contracts for the stateless forecast endpoint.
 
 **Guide me through these build and learning activities:**
+
 1. Explain Python type hints versus runtime Pydantic validation.
 2. Define Pydantic inputs for the 12 approved assumptions and outputs for monthly forecasts and summaries.
 3. Make exact Decimal string representation in JSON explicit.
@@ -275,6 +282,7 @@ Act as my interactive engineering tutor. Follow the project's original scope, `d
 **Business/financial concepts to reinforce:** Financial assumption integrity and consistent results for external consumers.
 
 **Acceptance criteria (demonstrate rather than assume):**
+
 - [ ] Forecast API produces the complete documented JSON shape.
 - [ ] Invalid inputs produce expected 422 errors.
 - [ ] The domain engine remains independent of FastAPI/Pydantic.
@@ -287,7 +295,6 @@ Act as my interactive engineering tutor. Follow the project's original scope, `d
 **Begin with this action:** Explain type hints versus runtime validation with one small example before touching the existing endpoint.
 
 Before closing, perform a 3–5-question knowledge check, review observed tests, determine COMPLETE or NOT YET COMPLETE, and update the PROJECT_STATE handoff with actual evidence.
-
 
 ---
 
@@ -304,6 +311,7 @@ Act as my interactive engineering tutor. Follow the project's original scope, `d
 **Phase objective:** Learn relational storage and write SQL by hand before depending on the ORM.
 
 **Guide me through these build and learning activities:**
+
 1. Introduce persistence and compare SQL language with PostgreSQL database software.
 2. Install/start PostgreSQL and connect using `psql` or a suitable client.
 3. Reason through the proposed three-table schema, keys, foreign keys, checks and relationships.
@@ -317,6 +325,7 @@ Act as my interactive engineering tutor. Follow the project's original scope, `d
 **Business/financial concepts to reinforce:** Company identity, scenario assumptions as source data, derived forecast outputs.
 
 **Acceptance criteria (demonstrate rather than assume):**
+
 - [ ] The user can write a basic SQL query without AI.
 - [ ] Tables/relations can be drawn and described.
 - [ ] A bad FK or CHECK constraint fails as expected.
@@ -329,7 +338,6 @@ Act as my interactive engineering tutor. Follow the project's original scope, `d
 **Begin with this action:** Ask me to sketch companies → scenarios → assumptions and explain what happens if a scenario references a missing company.
 
 Before closing, perform a 3–5-question knowledge check, review observed tests, determine COMPLETE or NOT YET COMPLETE, and update the PROJECT_STATE handoff with actual evidence.
-
 
 ---
 
@@ -346,6 +354,7 @@ Act as my interactive engineering tutor. Follow the project's original scope, `d
 **Phase objective:** Connect FastAPI to PostgreSQL and build persistent create/get company operations.
 
 **Guide me through these build and learning activities:**
+
 1. Explain PostgreSQL vs psycopg driver vs SQLAlchemy SQL toolkit vs SQLAlchemy ORM.
 2. Introduce SQLAlchemy 2.x models for the **three** agreed app tables.
 3. Set up Alembic baseline migration and verify actual generated schema.
@@ -359,6 +368,7 @@ Act as my interactive engineering tutor. Follow the project's original scope, `d
 **Business/financial concepts to reinforce:** Stable company identity and persistence across API calls.
 
 **Acceptance criteria (demonstrate rather than assume):**
+
 - [ ] A company created through HTTP exists in PostgreSQL.
 - [ ] Retrieve works in a new session and after app restart.
 - [ ] All three tables exist through Alembic migration.
@@ -371,7 +381,6 @@ Act as my interactive engineering tutor. Follow the project's original scope, `d
 **Begin with this action:** Ask me to explain a raw SQL INSERT from Phase 07 and compare it to an ORM save.
 
 Before closing, perform a 3–5-question knowledge check, review observed tests, determine COMPLETE or NOT YET COMPLETE, and update the PROJECT_STATE handoff with actual evidence.
-
 
 ---
 
@@ -388,6 +397,7 @@ Act as my interactive engineering tutor. Follow the project's original scope, `d
 **Phase objective:** Save a scenario and its assumptions atomically as linked rows.
 
 **Guide me through these build and learning activities:**
+
 1. Review 1-to-many company/scenarios and 1-to-1 scenario/assumptions relationships.
 2. Implement `POST /companies/{id}/scenarios` including company existence and duplicate-name validation.
 3. Map API assumption input to ORM rows without calculating the forecast.
@@ -401,6 +411,7 @@ Act as my interactive engineering tutor. Follow the project's original scope, `d
 **Business/financial concepts to reinforce:** A scenario is a named assumption snapshot; calculation outputs are derived on demand.
 
 **Acceptance criteria (demonstrate rather than assume):**
+
 - [ ] Valid scenario + assumptions save together.
 - [ ] Missing company 404, invalid assumptions 422, duplicate scenario 409.
 - [ ] Failed two-row transaction rolls back both operations.
@@ -413,7 +424,6 @@ Act as my interactive engineering tutor. Follow the project's original scope, `d
 **Begin with this action:** First ask me to predict the database state if scenario INSERT succeeds but assumption INSERT fails outside one transaction.
 
 Before closing, perform a 3–5-question knowledge check, review observed tests, determine COMPLETE or NOT YET COMPLETE, and update the PROJECT_STATE handoff with actual evidence.
-
 
 ---
 
@@ -430,6 +440,7 @@ Act as my interactive engineering tutor. Follow the project's original scope, `d
 **Phase objective:** Retrieve a scenario with assumptions and list scenarios by company while learning JOINs.
 
 **Guide me through these build and learning activities:**
+
 1. Implement `GET /scenarios/{id}` with the saved assumptions in its response.
 2. Implement `GET /companies/{id}/scenarios` with list summaries ordered sensibly.
 3. Write and run equivalent SQL SELECT JOIN and ORDER BY queries in PostgreSQL.
@@ -443,6 +454,7 @@ Act as my interactive engineering tutor. Follow the project's original scope, `d
 **Business/financial concepts to reinforce:** Identifying operating plans, listing alternatives per business.
 
 **Acceptance criteria (demonstrate rather than assume):**
+
 - [ ] A saved scenario returns all 12 assumptions.
 - [ ] Company list returns only its scenarios.
 - [ ] SQL JOIN equivalent is understood and demonstrable.
@@ -455,7 +467,6 @@ Act as my interactive engineering tutor. Follow the project's original scope, `d
 **Begin with this action:** Ask me to propose the raw SQL join before showing SQLAlchemy retrieval.
 
 Before closing, perform a 3–5-question knowledge check, review observed tests, determine COMPLETE or NOT YET COMPLETE, and update the PROJECT_STATE handoff with actual evidence.
-
 
 ---
 
@@ -472,6 +483,7 @@ Act as my interactive engineering tutor. Follow the project's original scope, `d
 **Phase objective:** Complete scenario PATCH and DELETE with correct partial semantics and referential integrity.
 
 **Guide me through these build and learning activities:**
+
 1. Explain PATCH versus PUT and difference between omitted fields and explicit zero.
 2. Implement `PATCH /scenarios/{id}` with name and/or partial assumptions updates.
 3. Validate the complete resulting assumptions set and preserve unchanged values.
@@ -485,6 +497,7 @@ Act as my interactive engineering tutor. Follow the project's original scope, `d
 **Business/financial concepts to reinforce:** Updating assumptions within an operating plan without corrupting other scenario values.
 
 **Acceptance criteria (demonstrate rather than assume):**
+
 - [ ] PATCH changes only named fields, including explicit zero where valid.
 - [ ] DELETE removes scenario and its assumptions.
 - [ ] Conflict and missing-resource errors are correct.
@@ -497,7 +510,6 @@ Act as my interactive engineering tutor. Follow the project's original scope, `d
 **Begin with this action:** Start by comparing PATCH payload `{ "monthly_churn_rate": "0" }` with a payload omitting churn.
 
 Before closing, perform a 3–5-question knowledge check, review observed tests, determine COMPLETE or NOT YET COMPLETE, and update the PROJECT_STATE handoff with actual evidence.
-
 
 ---
 
@@ -514,6 +526,7 @@ Act as my interactive engineering tutor. Follow the project's original scope, `d
 **Phase objective:** Combine saved assumptions with the pre-existing pure financial engine.
 
 **Guide me through these build and learning activities:**
+
 1. Implement `GET /scenarios/{id}/forecast`.
 2. Load scenario plus assumptions without changing state.
 3. Convert ORM values to domain objects and call the existing financial function.
@@ -528,6 +541,7 @@ Act as my interactive engineering tutor. Follow the project's original scope, `d
 **Business/financial concepts to reinforce:** How saved operating assumptions become recalculated projections.
 
 **Acceptance criteria (demonstrate rather than assume):**
+
 - [ ] Saved forecast endpoint returns all 12 months and summary.
 - [ ] Changes to assumptions recalculate results.
 - [ ] No forecast rows persisted or commits needed for read-only operation.
@@ -540,7 +554,6 @@ Act as my interactive engineering tutor. Follow the project's original scope, `d
 **Begin with this action:** Ask me to predict the full order of operations, noting when DB access occurs and when financial engine is called.
 
 Before closing, perform a 3–5-question knowledge check, review observed tests, determine COMPLETE or NOT YET COMPLETE, and update the PROJECT_STATE handoff with actual evidence.
-
 
 ---
 
@@ -557,6 +570,7 @@ Act as my interactive engineering tutor. Follow the project's original scope, `d
 **Phase objective:** Compare 2–4 saved forecasts from one company against a selected baseline.
 
 **Guide me through these build and learning activities:**
+
 1. Define useful output metrics: annual revenue, annual EBITDA, exit ARR and ending cash.
 2. Create sample Base, Upside and Downside scenarios.
 3. Implement `GET /companies/{id}/scenario-comparison` with repeated `scenario_ids` query values.
@@ -571,6 +585,7 @@ Act as my interactive engineering tutor. Follow the project's original scope, `d
 **Business/financial concepts to reinforce:** Base/upside/downside planning, changes in revenue, profitability and cash risk.
 
 **Acceptance criteria (demonstrate rather than assume):**
+
 - [ ] Three named scenarios can be saved, forecast and compared.
 - [ ] Comparison metrics reconcile to standalone forecasts.
 - [ ] Invalid selections have deterministic 400/404/422 handling.
@@ -583,7 +598,6 @@ Act as my interactive engineering tutor. Follow the project's original scope, `d
 **Begin with this action:** Ask which financial KPIs best communicate scenarios and why, then introduce the agreed four V1 metrics.
 
 Before closing, perform a 3–5-question knowledge check, review observed tests, determine COMPLETE or NOT YET COMPLETE, and update the PROJECT_STATE handoff with actual evidence.
-
 
 ---
 
@@ -600,6 +614,7 @@ Act as my interactive engineering tutor. Follow the project's original scope, `d
 **Phase objective:** Evolve the populated PostgreSQL database intentionally using Alembic.
 
 **Guide me through these build and learning activities:**
+
 1. Explain why editing an ORM class does not change an already-created PostgreSQL table.
 2. Review Alembic baseline schema and current revision.
 3. Add nullable `description TEXT` to `scenarios` as intentional V2 schema change.
@@ -614,6 +629,7 @@ Act as my interactive engineering tutor. Follow the project's original scope, `d
 **Business/financial concepts to reinforce:** Preserving existing scenario data when requirements evolve.
 
 **Acceptance criteria (demonstrate rather than assume):**
+
 - [ ] Existing records survive migration.
 - [ ] New/old scenarios work with optional descriptions.
 - [ ] Upgrade/downgrade mechanics can be described.
@@ -626,7 +642,6 @@ Act as my interactive engineering tutor. Follow the project's original scope, `d
 **Begin with this action:** Ask what happens if only Python models change while the PostgreSQL schema remains the same.
 
 Before closing, perform a 3–5-question knowledge check, review observed tests, determine COMPLETE or NOT YET COMPLETE, and update the PROJECT_STATE handoff with actual evidence.
-
 
 ---
 
@@ -643,6 +658,7 @@ Act as my interactive engineering tutor. Follow the project's original scope, `d
 **Phase objective:** Harden the completed backend and learn evidence-based failure diagnosis.
 
 **Guide me through these build and learning activities:**
+
 1. Audit actual unit/API/DB test coverage, identify highest-value gaps.
 2. Ensure DB tests use isolated, disposable databases or sound rollback fixtures.
 3. Handle missing records, uniqueness conflicts, bad inputs and database connection failures predictably.
@@ -657,6 +673,7 @@ Act as my interactive engineering tutor. Follow the project's original scope, `d
 **Business/financial concepts to reinforce:** Financial calculation trustworthiness and data integrity.
 
 **Acceptance criteria (demonstrate rather than assume):**
+
 - [ ] Important tests pass; unrun tests are not called passing.
 - [ ] 422/409/500 differences explained.
 - [ ] A failed transaction and SQL query can be inspected.
@@ -670,7 +687,6 @@ Act as my interactive engineering tutor. Follow the project's original scope, `d
 **Begin with this action:** Start with an audit of actual test files/results, not imagined coverage. Prioritise the largest verified gap.
 
 Before closing, perform a 3–5-question knowledge check, review observed tests, determine COMPLETE or NOT YET COMPLETE, and update the PROJECT_STATE handoff with actual evidence.
-
 
 ---
 
@@ -687,6 +703,7 @@ Act as my interactive engineering tutor. Follow the project's original scope, `d
 **Phase objective:** Verify the finished backend from a clean environment and independently demonstrate technical mastery.
 
 **Guide me through these build and learning activities:**
+
 1. Audit all ten API endpoints, data model and financial assumptions against engineering specification.
 2. Create a fresh test database, run Alembic revisions and all real tests.
 3. Walk through company → scenario → PATCH → forecast → comparison → DELETE using real HTTP requests.
@@ -701,6 +718,7 @@ Act as my interactive engineering tutor. Follow the project's original scope, `d
 **Business/financial concepts to reinforce:** Interpretation and reliability of commercial scenario forecasts.
 
 **Acceptance criteria (demonstrate rather than assume):**
+
 - [ ] Full acceptance checklist met or explicit remaining items recorded.
 - [ ] Fresh setup and demo verified.
 - [ ] User can predict, alter, test and debug behavior without AI.

@@ -1,17 +1,17 @@
 # Phased Build Roadmap — Financial Scenario Engine
 
-**Status:** Planning complete; implementation starts at Phase 00.  
+**Status:** Planning complete; implementation starts at Phase 00.\
 **Format:** Seven milestones broken into **17 separate guided tutor conversations**, Phases 00–16. A phase can require multiple work sessions. Schedule by **acceptance evidence**, not the calendar.
 
-**Source of scope:** [`ORIGINAL_SCOPE.md`](ORIGINAL_SCOPE.md).  
-**Technical contract:** [`ENGINEERING_SPEC.md`](ENGINEERING_SPEC.md).  
-**Tutor method:** [`TUTOR_PROTOCOL.md`](TUTOR_PROTOCOL.md).  
-**Project handoff:** [`PROJECT_STATE.md`](PROJECT_STATE.md).
+**Source of scope:** `ORIGINAL_SCOPE.md`.\
+**Technical contract:** `ENGINEERING_SPEC.md`.\
+**Tutor method:** `TUTOR_PROTOCOL.md`.\
+**Project handoff:** `PROJECT_STATE.md`.
 
 ## Milestones and gates
 
 | Milestone | Phases | Delivery gate |
-|---|---|---|
+| --- | --- | --- |
 | 1 — Python Financial Engine | 00–04 | Pure Python 12-month forecast, tested without HTTP or DB |
 | 2 — HTTP and APIs | 05–06 | Documented validated POST /forecasts endpoint |
 | 3 — Relational Database | 07–08 | PostgreSQL schema and company persistence |
@@ -23,7 +23,7 @@
 ## Ordered phase plan
 
 | Phase | Conversation focus | Tangible result | Dependency |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | [00](../prompts/phase_00.md) | Project Setup and Development Workflow | Create and understand a clean Python development environment and a reproducible Git workflow before adding domain logic | — |
 | [01](../prompts/phase_01.md) | Financial Domain Modelling in Python | Model the 12 financial inputs and structured calculation outputs before implementing formulas | Phase 00 completed |
 | [02](../prompts/phase_02.md) | Customer Economics and Calculation Logic | Implement and test the 12-month customer opening, churn, acquisition and closing calculations | Phase 01 completed |
@@ -57,10 +57,10 @@
 1. Open a **new chat in the same ChatGPT Project** and paste that phase's prompt.
 2. Provide the latest `docs/PROJECT_STATE.md` and relevant code/test output if the tutor cannot directly read the repo.
 3. Work one meaningful step at a time. Answer prediction questions, write or edit code and run tests locally.
-4. Before finishing, use [`prompts/_end_phase_review.md`](../prompts/_end_phase_review.md). A phase is **COMPLETE** only with working evidence **and** understanding.
+4. Before finishing, use `prompts/_end_phase_review.md`. A phase is **COMPLETE** only with working evidence **and** understanding.
 5. Save updated project-state record and commit relevant files. Open the next conversation.
 
-If a chat becomes unwieldy, start a new one with [`prompts/_resume_phase.md`](../prompts/_resume_phase.md) and the current state. Never restart the phase from assumptions or skip prerequisites.
+If a chat becomes unwieldy, start a new one with `prompts/_resume_phase.md` and the current state. Never restart the phase from assumptions or skip prerequisites.
 
 ## Scope guardrails
 

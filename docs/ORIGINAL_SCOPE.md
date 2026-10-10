@@ -41,15 +41,15 @@ The goal is to understand what happens **behind the interface**.
 
 I want to be able to trace:
 
-User/client  
-→ HTTP request  
-→ API route  
-→ validation  
-→ business/domain logic  
-→ financial calculation engine  
-→ database operation  
-→ persisted data  
-→ response serialization  
+User/client\
+→ HTTP request\
+→ API route\
+→ validation\
+→ business/domain logic\
+→ financial calculation engine\
+→ database operation\
+→ persisted data\
+→ response serialization\
 → JSON response
 
 By the end of the project, I should genuinely understand this pipeline rather than merely having AI generate it for me.
@@ -236,11 +236,11 @@ Likely using pytest.
 
 I want to learn to diagnose failures across:
 
-API route  
-→ validation  
-→ business logic  
-→ ORM  
-→ SQL  
+API route\
+→ validation\
+→ business logic\
+→ ORM\
+→ SQL\
 → database
 
 rather than blindly changing code until things work.
@@ -547,16 +547,16 @@ Take one example such as:
 
 Walk through exactly what happens from:
 
-HTTP request  
-→ FastAPI route  
-→ Pydantic validation  
-→ service/domain logic  
-→ financial model  
-→ SQLAlchemy  
-→ SQL  
-→ PostgreSQL  
-→ transaction commit  
-→ response serialization  
+HTTP request\
+→ FastAPI route\
+→ Pydantic validation\
+→ service/domain logic\
+→ financial model\
+→ SQLAlchemy\
+→ SQL\
+→ PostgreSQL\
+→ transaction commit\
+→ response serialization\
 → HTTP response
 
 I want this lifecycle to become a core mental model.
@@ -627,15 +627,19 @@ Define the testing pyramid for this project.
 Separate:
 
 ### Unit tests
+
 Especially financial calculations.
 
 ### API tests
+
 Request/response behaviour.
 
 ### Integration tests
+
 Backend + database.
 
 ### Database-specific tests
+
 Constraints, persistence and transactions.
 
 For each category, give representative examples.
@@ -650,7 +654,7 @@ Design at least one intentional schema evolution during the project.
 
 For example:
 
-V1 database  
+V1 database\
 → later add scenario description / version / created timestamp.
 
 I want to experience:
@@ -724,10 +728,15 @@ Every milestone must result in observable functionality.
 For each milestone specify:
 
 ### What I build
+
 ### Backend concepts I learn
+
 ### Database concepts I learn
+
 ### Business concepts I reinforce
+
 ### Tests I should write
+
 ### Definition of done
 
 A possible progression might resemble:

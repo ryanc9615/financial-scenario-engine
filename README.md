@@ -1,7 +1,7 @@
 # Financial Scenario Engine
 
 **Project 2 — Technical Apprenticeship**\
-Status: **Documentation/reference setup; Phase 00 not yet started**
+Status: **Documentation/reference setup; Phase 00 in progress**
 
 A deliberately small Python backend for managing B2B SaaS financial scenarios, generating deterministic 12-month forecasts and comparing alternatives. The goal is practical mastery of Python, HTTP, FastAPI, SQL, PostgreSQL, SQLAlchemy, persistence, transactions and testing.
 
@@ -29,11 +29,92 @@ A deliberately small Python backend for managing B2B SaaS financial scenarios, g
 | 6 — Reliability | 14–15 | Migration, error handling and debugging |
 | 7 — Final mastery | 16 | Repeatable demonstration and technical examination |
 
+Getting started
+
+
 ## Getting started
 
-This repository deliberately contains no application source files or installed dependencies yet. The first phase is to learn and perform Python setup in a guided way. **Do not skip it by generating the entire scaffold.**
+### Prerequisites
 
-When app development begins, replace this section with verified installation, database, migration, run and test instructions. Never publish a public write-enabled API without authentication or an independent access boundary.
+- **Python 3.12 or later** — tested with Python 3.12.5.
+- **Git** — source control.
+- **VS Code** — recommended editor.
+- **Terminal** — instructions use macOS and Zsh.
+
+### 1. Create a virtual environment
+
+From the project root, run:
+
+```bash
+python3 -m venv .venv
+```
+
+This creates a project-specific virtual environment named `.venv`.
+
+### 2. Activate the virtual environment
+
+```bash
+source .venv/bin/activate
+```
+
+This configures the terminal to use the project's Python environment.
+
+
+### 3. Configure VS Code
+
+Open the project folder in VS Code.
+
+Open the Command Palette using Cmd + Shift + P.
+
+Select Python: Select Interpreter.
+
+Choose the interpreter at .venv/bin/python.
+
+This ensures VS Code uses the same Python environment for running, debugging and analysing the project.
+
+### 4. Run the application
+
+From the project root, with the virtual environment activated, run:
+
+python -m app
+
+How it works:
+
+python starts the selected Python interpreter.
+
+-m instructs Python to locate and execute a module or package by name.
+
+app identifies the project's Python package.
+
+Python executes app/__main__.py, which currently serves as the application's entry point.
+
+Expected output:
+
+Financial Scenario Engine: environment ready
+
+This confirms that the Python environment and application entry point are functioning.
+
+### 5. Dependency management
+
+Project metadata and dependency requirements are declared in pyproject.toml.
+
+The project currently requires no third-party Python packages. Dependencies will be added incrementally as the relevant development phases require them.
+
+.venv/ contains locally installed packages and is excluded from Git.
+
+pyproject.toml declares project requirements and is tracked by Git.
+
+.env.example documents example configuration variables without storing actual credentials.
+
+.env is excluded from Git to prevent accidental disclosure of secrets.
+
+Note: Creating a virtual environment does not automatically install dependencies declared in pyproject.toml. An installation step will be introduced when the project requires external packages.
+
+### 6. Current limitations
+
+The application currently contains only a minimal Python entry point. Financial calculations, HTTP endpoints and PostgreSQL persistence will be introduced in subsequent phases.
+
+Do not expose unauthenticated write-enabled API endpoints publicly. The initial application will run locally for development and learning purposes.
 
 ## GitHub remote setup (one time)
 

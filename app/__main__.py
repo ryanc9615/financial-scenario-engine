@@ -1,0 +1,1 @@
+print("Financial Scenario Engine: environment ready")
